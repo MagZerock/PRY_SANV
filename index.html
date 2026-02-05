@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Valentín ❤️</title>
+
+    <link rel="stylesheet" href="./public/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/estilos.css">
+
+</head>
+
+<body>
+
+    <section class="hero-seccion d-flex justify-content-center align-items-center">
+        <div class="corazon-wrapper">
+            <button class="btn-flecha-lateral izquierda" type="button" onclick="mostrarCarruselAtardeceres()"
+                aria-label="Ver atardeceres">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="white" viewBox="0 0 16 16">
+                    <path
+                        d="M11.5 1.5a.5.5 0 0 1 0 1H5.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L5.707 1.5z" />
+                </svg>
+            </button>
+
+            <div class="corazon-texto-box">
+                <!-- Texto inicial -->
+                <div class="texto-romantico" id="textoInicial">
+                    <h2 class="display-4 fw-bold text-uppercase">¡FELIZ DÍA, MI VIDA!</h2>
+
+                    <p class="lead mb-2 text-uppercase">
+                        MI NIÑA LINDA, QUIERO QUE SEPAS QUE TE AMO CON TODO MI CORAZÓN
+                    </p>
+
+                    <p class="lead mb-2 text-uppercase">
+                        ERES LA LUZ DE MI CAMINO Y LA NIÑA DE MIS OJOS
+                    </p>
+
+                    <p class="fs-4 fw-bold text-uppercase mt-3">
+                        ERES MI UNIVERSO ENTERO, MI BONITA ❤️
+                    </p>
+
+                    <!-- Botón de flecha -->
+                    <button class="btn-flecha mt-3" id="btnMostrarCarrusel" onclick="mostrarCarrusel()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white"
+                            class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Carrusel principal (oculto inicialmente) -->
+                <div id="carruselImagenes" style="display: none;" class="w-100 h-100">
+                    <div id="carouselValentin" class="carousel slide carousel-corazon" data-bs-ride="false">
+                        <div class="carousel-inner rounded-3">
+                            <!-- Slide 1 (cambia las rutas a tus imagenes) -->
+                            <div class="carousel-item active">
+                                <img src="./public/images/imagen_1.jpeg" class="d-block w-100 img-carousel"
+                                    alt="Foto 1">
+                                <div class="carousel-caption">
+                                    <p>Me encanta tus ojos 🥺❤️</p>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-item">
+                                <img src="./public/images/imagen_2.jpeg" class="d-block w-100 img-carousel"
+                                    alt="Foto 2">
+                                <div class="carousel-caption">
+                                    <p>Amo tu sonrisa 💕✨</p>
+                                </div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-item">
+                                <img src="./public/images/imagen_3.jpeg" class="d-block w-100 img-carousel"
+                                    alt="Foto 3">
+                                <div class="carousel-caption">
+                                    <p>Tu rizado lo adoro 🥰✨</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./public/images/imagen_4.jpeg" class="d-block w-100 img-carousel"
+                                    alt="Foto 3">
+                                <div class="carousel-caption">
+                                    <p>Me encanta todo de ti 🥰❣️</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./public/images/imagen_5.jpeg" class="d-block w-100 img-carousel"
+                                    alt="Foto 3">
+                                <div class="carousel-caption">
+                                    <p>My little girl, you are perfect and I love you🥺🫶🏻
+                                        <br>
+                                        I love everything about you 🥺❤️
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controles del carrusel -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselValentin"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselValentin"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+
+                        <!-- Botón para volver -->
+                        <button class="btn btn-light btn-sm position-absolute top-0 end-0 m-2"
+                            onclick="ocultarCarrusel()">
+                            ✕
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Carrusel de atardeceres (oculto inicialmente) -->
+                <div id="carruselAtardeceres" style="display: none;" class="w-100 h-100">
+                    <div id="carouselAtardeceres" class="carousel slide carousel-corazon" data-bs-ride="false">
+                        <div class="carousel-inner rounded-3">
+                            <div class="carousel-item active">
+                                <img src="./public/images/atardecer1.jpeg" class="d-block w-100 img-carousel" alt="Atardecer 1">
+                                <div class="carousel-caption d-md-block">
+                                    <h5 class="texto-sombra">Eres mi vista favorita</h5>
+                                    <p class="texto-sombra">Ningún atardecer se compara con tu belleza.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./public/images/atardecer2.jpg" class="d-block w-100 img-carousel" alt="Atardecer 2">
+                                <div class="carousel-caption d-md-block">
+                                    <h5 class="texto-sombra">Juntos es mejor</h5>
+                                    <p class="texto-sombra">Quiero ver caer el sol contigo todos los días.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./public/images/atardecer3.jpg" class="d-block w-100 img-carousel" alt="Atardecer 3">
+                                <div class="carousel-caption d-md-block">
+                                    <h5 class="texto-sombra">Mi paz</h5>
+                                    <p class="texto-sombra">Tus abrazos me dan más calma que este paisaje.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./public/images/atardecer4.jpg" class="d-block w-100 img-carousel" alt="Atardecer 4">
+                                <div class="carousel-caption d-md-block">
+                                    <h5 class="texto-sombra">Promesa</h5>
+                                    <p class="texto-sombra">Bajo este cielo prometo quererte siempre.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./public/images/atardecer5.jpeg" class="d-block w-100 img-carousel" alt="Atardecer 5">
+                                <div class="carousel-caption d-md-block">
+                                    <h5 class="texto-sombra">Amor eterno</h5>
+                                    <p class="texto-sombra">El sol se va, pero mi amor por ti nunca se apaga.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselAtardeceres"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselAtardeceres"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+
+                        <button class="btn btn-light btn-sm position-absolute top-0 end-0 m-2"
+                            onclick="ocultarCarruselAtardeceres()">
+                            ✕
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-flecha-lateral derecha" type="button" data-bs-toggle="modal" data-bs-target="#modalVerte"
+                aria-label="Abrir pregunta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="white" viewBox="0 0 16 16">
+                    <path
+                        d="M4.5 1.5a.5.5 0 0 0 0 1h5.793L7.146 5.646a.5.5 0 1 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L10.293 1.5z" />
+                </svg>
+            </button>
+        </div>
+
+    </section>
+
+    <div id="alertaAtardeceres" class="alert alerta-atardecer" role="alert" style="display: none;">
+        Sé que te encantan los atardeceres de la misma manera que me encantas tú... Disfrútalos ❤️
+    </div>
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="modalVerte" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-romantico">
+                <div class="modal-body text-center">
+                    <p class="fs-4 mb-4">¿Quieres ser mi San Valentin?</p>
+                    <div class="d-flex gap-2 justify-content-center position-relative">
+                        <button class="btn btn-success" type="button" id="btnSiVerte">Si</button>
+                        <button class="btn btn-danger btn-no" type="button" onmouseover="moverNo(this)">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <!--<div class="modal fade" id="modalSanValentin" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-romantico">
+                <div class="modal-body text-center">
+                    <p class="fs-4 mb-4">Quieres ser mi San Valentin?</p>
+                    <div class="d-flex gap-2 justify-content-center position-relative">
+                        <button class="btn btn-success" type="button" data-bs-dismiss="modal">Si</button>
+                        <button class="btn btn-danger btn-no" type="button" onmouseover="moverNo(this)">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <script src="./public/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function mostrarCarrusel() {
+            document.getElementById('textoInicial').style.display = 'none';
+            document.getElementById('carruselAtardeceres').style.display = 'none';
+            document.getElementById('carruselImagenes').style.display = 'flex';
+        }
+
+        function ocultarCarrusel() {
+            document.getElementById('carruselImagenes').style.display = 'none';
+            document.getElementById('textoInicial').style.display = 'block';
+        }
+
+        let alertaTimeoutId = null;
+
+        function mostrarCarruselAtardeceres() {
+            document.getElementById('textoInicial').style.display = 'none';
+            document.getElementById('carruselImagenes').style.display = 'none';
+            document.getElementById('carruselAtardeceres').style.display = 'none';
+
+            const alerta = document.getElementById('alertaAtardeceres');
+            alerta.style.display = 'block';
+
+            if (alertaTimeoutId) {
+                clearTimeout(alertaTimeoutId);
+            }
+
+            alertaTimeoutId = setTimeout(() => {
+                alerta.style.display = 'none';
+                document.getElementById('carruselAtardeceres').style.display = 'flex';
+            }, 1800);
+        }
+
+        function ocultarCarruselAtardeceres() {
+            document.getElementById('carruselAtardeceres').style.display = 'none';
+            document.getElementById('textoInicial').style.display = 'block';
+        }
+
+        function moverNo(btn) {
+            const parent = btn.parentElement;
+            const maxX = parent.clientWidth - btn.offsetWidth;
+            const maxY = parent.clientHeight - btn.offsetHeight;
+            const x = Math.floor(Math.random() * Math.max(1, maxX));
+            const y = Math.floor(Math.random() * Math.max(1, maxY));
+            btn.style.position = 'absolute';
+            btn.style.left = `${x}px`;
+            btn.style.top = `${y}px`;
+        }
+
+        const btnSiVerte = document.getElementById('btnSiVerte');
+        if (btnSiVerte) {
+            btnSiVerte.addEventListener('click', () => {
+                const modalVerte = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalVerte'));
+                modalVerte.hide();
+                const modalSanValentin = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalSanValentin'));
+                modalSanValentin.show();
+            });
+        }
+    </script>
+</body>
+
+</html>

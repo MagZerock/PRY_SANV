@@ -1,0 +1,264 @@
+/* estilos.css */
+
+body {
+    background-color: #ffe6e6;
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. Estilo para la sección principal (el fondo de lirios) */
+.hero-seccion {
+    /* Usamos ../ para salir de la carpeta css y entrar a img */
+    background-image: url('../images/imagen_fondo.jpeg');
+    
+    /* Configuración para que la imagen se vea perfecta */
+    background-size: cover;       /* Cubre todo el espacio */
+    background-position: center;  /* Se centra la imagen */
+    background-repeat: no-repeat; /* No se repite como mosaico */
+    
+    /* Altura mínima: 100vh significa el 100% de la altura de la pantalla */
+    min-height: 100vh;
+    
+    /* Filtro oscuro suave para resaltar el corazón */
+    background-color: rgba(0,0,0,0.3);
+    background-blend-mode: overlay;
+}
+
+/* 2. Estilo para el contenedor del corazón */
+.corazon-texto-box {
+    /* Usamos ../ para salir de la carpeta css y entrar a img */
+    background-image: url('../images/corazon.svg');
+    
+    /* Tamaño del corazón */
+    width: 700px;       /* Puedes aumentar esto a 400px o 500px si quieres más espacio */
+    height: 700px;      /* Mantén el alto igual al ancho para que no se deforme */
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* Flexbox para centrar el texto DENTRO del corazón */
+    display: flex;
+    flex-direction: column; /* Apila el título y el párrafo verticalmente */
+    align-items: center;    /* Centrado horizontal */
+    justify-content: center;/* Centrado vertical */
+    
+    padding: 40px; /* Espacio interno para que el texto no toque los bordes del corazón */
+}
+
+.corazon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-flecha-lateral {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
+.btn-flecha-lateral:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.btn-flecha-lateral.izquierda {
+    left: -70px;
+}
+
+.btn-flecha-lateral.derecha {
+    right: -70px;
+}
+
+    @media (max-width: 768px) {
+        .btn-flecha-lateral.izquierda {
+            left: -40px;
+        }
+
+        .btn-flecha-lateral.derecha {
+            right: -40px;
+        }
+    }
+
+/* 3. Estilo de la tipografía */
+.texto-romantico {
+   font-family: 'Georgia', 'Garamond', serif;
+   color: white;
+   text-align: center;
+   line-height: 1.8;
+   letter-spacing: 1px;
+}
+
+.texto-romantico h2 {
+   font-size: 2.2rem;
+   font-weight: 300;
+   text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+   margin-bottom: 15px;
+   letter-spacing: 0.5px;
+}
+
+.texto-romantico p {
+   text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+   margin: 10px 0;
+   font-size: 0.95rem;
+   font-weight: 300;
+}
+
+.texto-romantico .lead {
+   font-size: 1rem;
+   font-weight: 400;
+}
+
+.texto-romantico .fs-4 {
+   font-size: 1.1rem !important;
+}
+
+/* 4. Estilo para el botón de flecha */
+.btn-flecha {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 0;
+    animation: bounce 2s infinite;
+}
+
+.btn-flecha:hover {
+    transform: scale(1.2);
+}
+
+/* Animación de rebote para la flecha */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 5. Estilos para el carrusel */
+#carruselImagenes {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carruselAtardeceres {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-corazon {
+    width: 90%;
+    max-width: 580px;
+}
+
+.img-carousel {
+    height: 360px;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.2);
+    image-rendering: auto;
+}
+
+.carousel-caption {
+    background-color: rgba(0,0,0,0.6);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.texto-sombra {
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    color: white;
+    font-family: 'Georgia', 'Garamond', serif;
+    font-weight: 400;
+}
+
+.texto-sombra h5 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.carousel .btn.btn-light {
+    z-index: 2;
+}
+
+.modal-romantico {
+    background-image: url('../images/lirios_fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.modal-romantico .modal-body {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 8px;
+}
+
+.btn-no {
+    position: relative;
+}
+
+/* Estilo romántico para la alerta de atardeceres */
+.alerta-atardecer {
+    /* Fondo: Un degradado suave de rosa a naranja (Sunset) */
+    background: linear-gradient(135deg, #ffc3a0 0%, #ffafbd 100%);
+    
+    /* Texto */
+    color: #7a2828; /* Un rojo oscuro elegante para que se lea bien */
+    font-family: 'Georgia', 'Garamond', serif; /* Fuente elegante y legible */
+    font-size: 1.8rem; /* Letra un poco más grande */
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    
+    /* Bordes y formas */
+    border: none; /* Quitamos el borde aburrido estándar */
+    border-radius: 20px; /* Bordes muy redondeados */
+    border-left: 6px solid #ff4757; /* Un detalle de color fuerte a la izquierda */
+    
+    /* Sombra para que parezca que flota */
+    box-shadow: 0 10px 25px rgba(255, 175, 189, 0.4);
+    
+    /* Espaciado */
+    padding: 20px;
+    margin: 20px auto; /* Centrado y separado */
+    max-width: 80%; /* Que no ocupe todo el ancho de la pantalla */
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1056;
+    
+    /* Animación suave al aparecer */
+    animation: aparecerSuave 1s ease-out;
+}
+
+/* Animación para que entre desde abajo suavemente */
+@keyframes aparecerSuave {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
