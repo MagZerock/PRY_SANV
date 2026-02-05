@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para mi Valentín ❤️</title>
+    <title>JANIS</title>
 
     <link rel="stylesheet" href="./public/bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./public/css/estilos.css">
@@ -12,6 +12,8 @@
 </head>
 
 <body>
+    <!-- Contenedor para animación de corazones -->
+    <div class="corazones-container" id="corazonesContainer"></div>
 
     <section class="hero-seccion d-flex justify-content-center align-items-center">
         <div class="corazon-wrapper">
@@ -192,12 +194,12 @@
         Sé que te encantan los atardeceres de la misma manera que me encantas tú... Disfrútalos ❤️
     </div>
 
-    <!-- Modal 1 -->
+    <!-- Modal 1 - Pregunta -->
     <div class="modal fade" id="modalVerte" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content modal-romantico">
                 <div class="modal-body text-center">
-                    <p class="fs-4 mb-4">¿Quieres ser mi San Valentin?</p>
+                    <p class="fs-4 mb-4">¿Quieres ser mi San Valentín?</p>
                     <div class="d-flex gap-2 justify-content-center position-relative">
                         <button class="btn btn-success" type="button" id="btnSiVerte">Si</button>
                         <button class="btn btn-danger btn-no" type="button" onmouseover="moverNo(this)">No</button>
@@ -207,20 +209,34 @@
         </div>
     </div>
 
-    <!-- Modal 2 -->
-    <!--<div class="modal fade" id="modalSanValentin" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content modal-romantico">
-                <div class="modal-body text-center">
-                    <p class="fs-4 mb-4">Quieres ser mi San Valentin?</p>
-                    <div class="d-flex gap-2 justify-content-center position-relative">
-                        <button class="btn btn-success" type="button" data-bs-dismiss="modal">Si</button>
-                        <button class="btn btn-danger btn-no" type="button" onmouseover="moverNo(this)">No</button>
+    <!-- Modal 2 - San Valentín -->
+    <div class="modal fade" id="modalSanValentin" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content modal-girasoles">
+                <button type="button" class="btn-volver" onclick="volverPrincipal()" aria-label="Volver"><i class="bi bi-arrow-left"></i> Volver</button>
+                <div class="modal-body modal-girasoles-body d-flex flex-column align-items-center justify-content-center">
+                    <!-- Contenedor con fondo de estrellas -->
+                    <div class="contenedor-estrellas">
+                        <p class="texto-girasoles-titulo">¡Sabía que dirías que sí!</p>
+                        <div class="my-4">
+                            <img src="./public/images/next_si.webp" alt="Celebración" class="img-girasoles">
+                        </div>
+                        <div class="parrafos-girasoles text-white text-center">
+                            <p class="parrafo-love">
+                                Prometo hacer lo posible por ser tu príncipe y que tú seas mi princesa
+                            </p>
+                            <p class="parrafo-love">
+                                Necesito vernos este jueves y si es posible el 14 de febrero también me gustaría pasar esos días contigo quedo pendiente a tu respuesta
+                            </p>
+                            <p class="parrafo-love">
+                                En realidad te quería preguntar ¿serías mi 14 de febrero?
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
 
     <script src="./public/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -276,10 +292,74 @@
             btnSiVerte.addEventListener('click', () => {
                 const modalVerte = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalVerte'));
                 modalVerte.hide();
-                const modalSanValentin = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalSanValentin'));
-                modalSanValentin.show();
+                
+                // Pequeño delay para que se vea el efecto de transición
+                setTimeout(() => {
+                    const modalSanValentin = new bootstrap.Modal(document.getElementById('modalSanValentin'), {
+                        backdrop: 'static',
+                        keyboard: false
+                    });
+                    modalSanValentin.show();
+                }, 300);
             });
         }
+
+        // Función para volver a la página principal
+        function volverPrincipal() {
+            const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalSanValentin'));
+            modal.hide();
+            location.reload();
+        }
+
+        // ===== ANIMACIONES DE CORAZONES =====
+        
+        // Variable para controlar cuál modo están usando (lluvia o flotante)
+        let modoAnimacion = 'lluvia'; // 'lluvia' o 'flotante'
+
+        // Función para crear corazones que caen (lluvia)
+        function crearCorazonLluvia() {
+            const container = document.getElementById('corazonesContainer');
+            const corazon = document.createElement('div');
+            corazon.className = 'corazon corazon-lluvia';
+            corazon.textContent = '❤️';
+            corazon.style.left = Math.random() * 100 + '%';
+            corazon.style.animationDuration = (3 + Math.random() * 3) + 's';
+            corazon.style.fontSize = (1.5 + Math.random() * 1.5) + 'rem';
+            
+            container.appendChild(corazon);
+            
+            setTimeout(() => corazon.remove(), 6000);
+        }
+
+        // Función para crear corazones flotantes
+        function crearCorazonFlotante() {
+            const container = document.getElementById('corazonesContainer');
+            const corazon = document.createElement('div');
+            corazon.className = 'corazon corazon-flotante';
+            corazon.textContent = '❤️';
+            corazon.style.left = Math.random() * 100 + '%';
+            corazon.style.top = Math.random() * 100 + '%';
+            corazon.style.animationDuration = (6 + Math.random() * 4) + 's';
+            corazon.style.fontSize = (1 + Math.random() * 2) + 'rem';
+            
+            container.appendChild(corazon);
+            
+            setTimeout(() => corazon.remove(), 10000);
+        }
+
+        // Generar corazones de lluvia cada 300ms
+        const intervaloLluvia = setInterval(() => {
+            if (modoAnimacion === 'lluvia') {
+                crearCorazonLluvia();
+            }
+        }, 300);
+
+        // Generar corazones flotantes cada 1000ms
+        const intervaloFlotante = setInterval(() => {
+            if (modoAnimacion === 'flotante') {
+                crearCorazonFlotante();
+            }
+        }, 1000);
     </script>
 </body>
 
