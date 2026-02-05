@@ -262,3 +262,252 @@ body {
         transform: translate(-50%, -50%);
     }
 }
+
+/* ============================================ */
+/* MEDIA QUERIES - DISEÑO RESPONSIVO */
+/* ============================================ */
+
+/* TABLETS (576px a 991px) */
+@media (max-width: 991px) {
+    .corazon-texto-box {
+        width: 550px;
+        height: 550px;
+        padding: 30px;
+    }
+
+    .texto-romantico h2 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
+    .texto-romantico p {
+        font-size: 0.9rem;
+        margin: 8px 0;
+    }
+
+    .texto-romantico .lead {
+        font-size: 0.95rem;
+    }
+
+    .texto-romantico .fs-4 {
+        font-size: 1rem !important;
+    }
+
+    .btn-flecha-lateral.izquierda {
+        left: -50px;
+    }
+
+    .btn-flecha-lateral.derecha {
+        right: -50px;
+    }
+
+    .carousel-corazon {
+        width: 85%;
+        max-width: 480px;
+    }
+
+    .img-carousel {
+        height: 300px;
+    }
+
+    .texto-sombra h5 {
+        font-size: 1.5rem;
+    }
+
+    .alerta-atardecer {
+        font-size: 1.4rem;
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .btn-flecha {
+        animation: bounce 1.5s infinite;
+    }
+}
+
+/* MÓVILES (max-width 575px) */
+@media (max-width: 575px) {
+    .hero-seccion {
+        min-height: auto;
+        padding: 20px 0;
+    }
+
+    .corazon-wrapper {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .corazon-texto-box {
+        width: 100%;
+        max-width: 350px;
+        height: 350px;
+        padding: 20px;
+        background-size: 100% 100%;
+    }
+
+    .texto-romantico {
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+    }
+
+    .texto-romantico h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        letter-spacing: 0.3px;
+    }
+
+    .texto-romantico p {
+        font-size: 0.8rem;
+        margin: 6px 0;
+    }
+
+    .texto-romantico .lead {
+        font-size: 0.85rem;
+    }
+
+    .texto-romantico .fs-4 {
+        font-size: 0.9rem !important;
+    }
+
+    .btn-flecha {
+        width: 30px;
+        height: 30px;
+    }
+
+    .btn-flecha svg {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .btn-flecha-lateral {
+        position: static;
+        transform: none;
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .btn-flecha-lateral.izquierda {
+        left: auto;
+        right: auto;
+    }
+
+    .btn-flecha-lateral.derecha {
+        right: auto;
+        left: auto;
+    }
+
+    .corazon-wrapper {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .carousel-corazon {
+        width: 95%;
+        max-width: 100%;
+    }
+
+    .img-carousel {
+        height: 250px;
+    }
+
+    .carousel-caption {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .texto-sombra h5 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .texto-sombra p {
+        font-size: 0.85rem;
+    }
+
+    .alerta-atardecer {
+        font-size: 1.1rem;
+        padding: 12px;
+        max-width: 95%;
+        border-radius: 15px;
+        border-left: 4px solid #ff4757;
+    }
+
+    .modal-romantico .modal-dialog {
+        margin: 10px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .fs-4 {
+        font-size: 0.95rem !important;
+    }
+}
+
+/* MÓVILES PEQUEÑOS (max-width 360px) */
+@media (max-width: 360px) {
+    .corazon-texto-box {
+        max-width: 280px;
+        height: 280px;
+        padding: 15px;
+    }
+
+    .texto-romantico h2 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .texto-romantico p {
+        font-size: 0.75rem;
+        margin: 4px 0;
+    }
+
+    .texto-romantico .lead {
+        font-size: 0.8rem;
+    }
+
+    .img-carousel {
+        height: 200px;
+    }
+
+    .texto-sombra h5 {
+        font-size: 1rem;
+    }
+
+    .texto-sombra p {
+        font-size: 0.8rem;
+    }
+
+    .alerta-atardecer {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+/* COMPUTADORAS GRANDES (min-width 1200px) */
+@media (min-width: 1200px) {
+    .corazon-texto-box {
+        width: 750px;
+        height: 750px;
+    }
+
+    .carousel-corazon {
+        width: 85%;
+        max-width: 600px;
+    }
+
+    .img-carousel {
+        height: 400px;
+    }
+
+    .texto-sombra h5 {
+        font-size: 2rem;
+    }
+
+    .alerta-atardecer {
+        font-size: 2rem;
+        padding: 30px;
+    }
+}
